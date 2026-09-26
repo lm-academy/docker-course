@@ -18,8 +18,12 @@ notebookRouter.post('/', async (req, res) => {
   try {
     const { name, description } = req.body;
 
-    if (!name) {
+    if (!name || typeof name !== 'string') {
       return res.status(400).json({ error: "'name' field is required." });
+    }
+
+    if (description !== undefined && typeof description !== 'string') {
+      return res.status(400).json({ error: "'description' field must be a string." });
     }
 
     const notebook = new Notebook({ name, description });
