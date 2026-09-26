@@ -25,7 +25,7 @@ Here’s a concise guide to walk you through the process:
 
 2. **Define Services in `compose.yml`:**
 
-   - Open `compose.yml` and define a service for your MongoDB. Set the image to `mongo:7.0-ubuntu2204`, and add port mappings for 27017.
+   - Open `compose.yml` and define a service for your MongoDB. Set the image to `mongo:7.0`, and add port mappings for 27017.
 
    Example `compose.yml`:
 
@@ -33,7 +33,7 @@ Here’s a concise guide to walk you through the process:
    version: '3.8'
    services:
      mongodb:
-       image: mongo:7.0-ubuntu2204
+       image: mongo:7.0
        ports:
          - '27017:27017'
    ```
@@ -58,7 +58,7 @@ Here’s a concise guide to walk you through the process:
 
    - To access the MongoDB shell, run:
      ```bash
-     docker run -it --network compose_default --rm mongo mongo --host mongodb --port 27017
+     docker run -it --network compose_default --rm mongo:7.0 mongosh --host mongodb --port 27017
      ```
    - Check that your databases are accessible!
 
