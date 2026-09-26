@@ -20,7 +20,7 @@ services:
     depends_on:
       - notebooks-db
   notebooks-db:
-    image: mongodb/mongodb-community-server:7.0-ubuntu2204
+    image: mongo:7.0
     env_file:
       - .env
     volumes:

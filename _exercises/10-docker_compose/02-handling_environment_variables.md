@@ -19,15 +19,15 @@ Here’s how you can set up your environment variables in Docker Compose:
 
    ```yaml
    environment:
-     - MONGODB_INITDB_ROOT_USERNAME=root
-     - MONGODB_INITDB_ROOT_PASSWORD=root_password
+     - MONGO_INITDB_ROOT_USERNAME=root
+     - MONGO_INITDB_ROOT_PASSWORD=root_password
    ```
 
 2. **Create a `.env` File**: To avoid exposing sensitive credentials, create a file named `.env.db` and add your environment variables there:
 
    ```plaintext
-   MONGODB_INITDB_ROOT_USERNAME=root
-   MONGODB_INITDB_ROOT_PASSWORD=root_password
+   MONGO_INITDB_ROOT_USERNAME=root
+   MONGO_INITDB_ROOT_PASSWORD=root_password
    ```
 
 3. **Load the `.env` File with Docker Compose**: In your Docker Compose configuration, specify the `.env` file:
