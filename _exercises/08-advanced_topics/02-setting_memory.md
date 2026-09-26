@@ -21,7 +21,7 @@ Ready to dive in? Give these steps a try, and once you're done, check out the st
 2. **Start a MongoDB Container**: Run a MongoDB container in detached mode, utilizing the following command:
 
    ```
-   docker run -d --name mongodb --memory="100m" mongo:7.0-ubuntu2204
+   docker run -d --name mongodb --memory="100m" mongo:7.0
    ```
 
 3. **Monitor Memory Usage**: While the container is running, use `docker stats` to observe the memory usage.
@@ -31,7 +31,7 @@ Ready to dive in? Give these steps a try, and once you're done, check out the st
    - Stop and remove the MongoDB container.
    - Experiment with different memory limits by setting:
      ```
-     docker run -d --name mongodb --memory="20m" mongo:7.0-ubuntu2204
+     docker run -d --name mongodb --memory="20m" mongo:7.0
      ```
    - This should result in an out-of-memory error which you can check via `docker inspect`.
 
@@ -39,13 +39,13 @@ Ready to dive in? Give these steps a try, and once you're done, check out the st
 
    - Use a command that sets memory reservations alongside the limit:
      ```
-     docker run -d --name mongodb --memory="100m" --memory-reservation="80m" mongo:7.0-ubuntu2204
+     docker run -d --name mongodb --memory="100m" --memory-reservation="80m" mongo:7.0
      ```
 
 6. **Explore Memory Swap Options**: Introduce a memory swap:
 
    ```
-   docker run -d --name mongodb --memory="20m" --memory-swap="200m" mongo:7.0-ubuntu2204
+   docker run -d --name mongodb --memory="20m" --memory-swap="200m" mongo:7.0
    ```
 
 7. **Check Container Status**: Use `docker ps` and `docker stats` to confirm that the container is running and observe memory behavior.
